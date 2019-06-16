@@ -1,0 +1,86 @@
+.bg-dark {
+    background-color: #CB202D !important;
+}
+
+.nav-link {
+    color: white !important;
+    cursor: pointer;
+}
+
+#signup {
+    background-color: #ffffff00;
+    border-color: #ffffff;
+}
+
+#home_back {
+
+    margin: -20.875% 0;
+}
+
+
+#btn_home {
+    color: white;
+    border-color: white;
+
+}
+
+#select_home
+{
+    width: 50%;
+}
+#srchbtn_home
+{
+    margin-top: -18%;
+    margin-left: 77%;
+}
+#footer
+{
+    background-color: #cb202d;
+    color: white;
+}
+
+jumbo
+{
+    text-align: center;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.content ul li
+{
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.content b
+{
+    float: right;
+    font-weight: normal;
+}
+
+.content ul li i
+{
+    cursor: pointer;
+}
+
