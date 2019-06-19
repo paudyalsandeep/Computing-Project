@@ -59,23 +59,23 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-group" method="post" action="<?php echo base_url(); ?>canteen">
+            <form class="form-group" method="post" action="<?php echo base_url();?>Login/check">
                                     <label for="email">Enter email or Institute ID</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="text" class="form-control" id="username" name="username">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password">
+                                    <input type="password" class="form-control" id="password" name="password">
                                     <div class="form-group form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox"> Remember me
                                         </label>
                                     </div>
-                                    <button type="button" class="btn btn-success btn-block">Login</button>
+                                    <input type="submit" value="Login" class="btn btn-success btn-block">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
+</form>
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <div class="col-md-12">
@@ -92,8 +92,6 @@
     <!-- Modal for login -->
     <div class="modal fade" id="registerModal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Create new account</h4>
@@ -121,7 +119,7 @@
                                 <label for="lname">Last Name</label>
                                 <input type="text" class="form-control" id="lname" name="lname">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" class="form-control" id="phone">
+                                <input type="text" class="form-control" id="phone" name="phone">
                                 <label for="selectCollege">Choose Role</label>
                                 <select class="form-control" id="selectRole" name="selectRole">
                                     <option>1</option>
@@ -133,7 +131,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="insID">Institute ID <sup>*Contact your institute for the ID</sup></label>
-                                <input type="text" class="form-control" id="insID" name="insID">
+                                <input type="Number" class="form-control" id="insID" name="insID"  onkeypress="return isNumberKey(event)">
                             </div>
                             <div class="col-md-6">
                                 <label for="password">Password</label>
@@ -156,3 +154,13 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+    </script>
