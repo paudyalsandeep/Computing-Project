@@ -59,7 +59,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-group" action="">
+                                <form class="form-group" method="post" action="<?php echo base_url(); ?>canteen">
                                     <label for="email">Enter email or Institute ID</label>
                                     <input type="email" class="form-control" id="email">
                                     <label for="password">Password</label>
@@ -81,7 +81,7 @@
                     <div class="col-md-12">
                         Looks like you're new here. Register now.
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -103,51 +103,52 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <form class="form-group" action="">
+                                <form class="form-group" method="post" action="<?php echo base_url(); ?>Registration/register">
                                     <label for="fname">First Name</label>
-                                    <input type="text" class="form-control" id="fname">
+                                    <input type="text" class="form-control" id="fname" name="fname">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email" name="email">
                                     <label for="sel1">Choose College</label>
-                                    <select class="form-control" id="selectCollege">
-                                        <option>Softwarica College</option>
+                                    <select class="form-control" id="selectCollege" name="selectCollege">
+                                        <option>1</option>
                                         <option>Islington College</option>
                                         <option>The British College</option>
                                         <option>ISMT</option>
                                     </select>
-                                </form>
+
                             </div>
                             <div class="col-md-6">
                                 <label for="lname">Last Name</label>
-                                <input type="text" class="form-control" id="lname">
+                                <input type="text" class="form-control" id="lname" name="lname">
                                 <label for="phone">Phone Number</label>
                                 <input type="text" class="form-control" id="phone">
                                 <label for="selectCollege">Choose Role</label>
-                                <select class="form-control" id="selectCollege">
-                                    <option>Admin</option>
-                                    <option>Student</option>
-                                    <option>Teacher</option>
-                                    <option>Kitchen Staff</option>
-                                    <option>Other Staff</option>
+                                <select class="form-control" id="selectRole" name="selectRole">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
                                 </select>
                             </div>
                             <div class="col-md-12">
                                 <label for="insID">Institute ID <sup>*Contact your institute for the ID</sup></label>
-                                <input type="text" class="form-control" id="insID">
+                                <input type="text" class="form-control" id="insID" name="insID">
                             </div>
                             <div class="col-md-6">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password">
+                                <input type="password" class="form-control" id="password" name="password">
                             </div>
                             <div class="col-md-6">
                                 <label for="confPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confPassword">
+                                <input type="password" class="form-control" id="confPassword" name="confPassword">
                             </div>
                             <div class="col-md-12">
                                 <br>
-                                <button type="button" class="btn btn-primary btn-block">Register</button>
+                                <input type="submit" class="btn btn-primary btn-block" value="Register">
                             </div>
                         </div>
+                        </form>
                     </div>
 
                 </div>

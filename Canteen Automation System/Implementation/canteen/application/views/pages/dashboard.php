@@ -1,0 +1,1 @@
+<img class="img-fluid" src="assets/img/home_back.png" alt="">
