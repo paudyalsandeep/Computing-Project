@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+$route['profile']='profile/index';
+$route['menu/payment']='payment/index';
+$route['menu']='canteen/index';
+$route['registration']='registration/index';
+$route['login']='Login/index';
+
 $route['posts']='posts/index';
 $route['default_controller'] = 'pages/view';
 $route['(:any)']='pages/view/$1';

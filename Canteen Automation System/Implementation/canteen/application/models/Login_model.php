@@ -7,7 +7,7 @@ public function login($username,$password)
 
 {
         $sql="select * from users where
-         InstituteID = '$username' && password = '$password' ";
+         email = '$username' && password = '$password' ";
          $result =$this->db->query($sql);
          $count=$result->num_rows();
 
@@ -25,8 +25,8 @@ public function login($username,$password)
 	public function getid($username,$password)
 	{
 
-  	 	 $this->db->select('InstituteID');
-    	$this->db->where('InstituteID',$username);
+  	 	 $this->db->select('email');
+    	$this->db->where('email',$username);
     		$this->db->where('password',$password);
    		 return $this->db->get('users');
 	}

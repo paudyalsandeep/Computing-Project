@@ -9,6 +9,10 @@ class Pages extends CI_Controller
             show_404();
         }
         
+        /*canteen page loading canteen_model and passing to view*/
+        
+        
+        /*loading different pages*/
         $data['title']=ucfirst($page);
         $this->load->view('templates/header');
         $this->load->view('pages/'.$page,$data);

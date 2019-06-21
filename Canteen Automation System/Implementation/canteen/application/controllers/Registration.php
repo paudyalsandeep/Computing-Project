@@ -15,17 +15,25 @@ class Registration extends CI_Controller
         {
             //load session library
             $this->load->library('session');
-            $data['users'] = $this->registration_model->getAllUsers();
-            $this->load->view('templates/header', $data);
+            $this->load->model('registration_model');
+            $data['roles'] = $this->registration_model->getRole();
+            $data['college'] = $this->registration_model->get_college();
+            
+            
+            $this->load->view("templates/header");
+            $this->load->view("registration/register",$data);
+            $this->load->view("templates/footer");
+            
+            //$this->load->view('templates/header', $data);
         }
     
     public function register()
     {
-        print_r($_POST);
+       
         
         $this->load->library('session');
         //form validation
-        $this->form_validation->set_rules('fname', 'Full Name', 'required');
+        $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
        /* $this->form_validation->set_rules('phone', 'Mobile Number ', 'required|regex_match[/^[0-9]{10}$/]'); 
@@ -40,32 +48,32 @@ class Registration extends CI_Controller
 
 		);
 		$this->session->set_flashdata($data);
-		redirect('dashboard');
+		redirect('registration');
         	//$data['users'] = $this->registration_model->getAllUsers();
          	//$this->load->view('templates/header', $data);
         } 
         else
         {
+            
              $this->registration_model->insert([
                  
              
             'fname' => $_POST['fname'],
             'lname' => $_POST['lname'],
             'email' => $_POST['email'],
-            //'phone' => $_POST['phone'],
+            'phone' => $_POST['phone'],
             'CollegeID' => $_POST['selectCollege'],
             'RoleID' => $_POST['selectRole'],
             'InstituteID' => $_POST['insID'],
             'password' => $_POST['password']
                  ]);
-            redirect('dashboard');
+            
+           
            $data=array(
             'successful'=>'Sucessfully Registered');
             $this->session->set_flashdata($data);
             
-            redirect('dashboard');
-           
-            
+            redirect('registration');
 
         }
         

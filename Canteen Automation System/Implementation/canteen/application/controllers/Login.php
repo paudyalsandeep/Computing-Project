@@ -10,10 +10,18 @@ Class Login extends CI_Controller
 			$this->load->database();
 			$this->load->library('session');
 		}
+
+		public function index()
+		{
+			$this->load->view("templates/header");
+            $this->load->view("login/login");
+            $this->load->view("templates/footer");
+		}
+
 		public function check()
 		{
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('username', 'username', 'required');
+			$this->form_validation->set_rules('email', 'email', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 
 			if ($this->form_validation->run()==False) 
@@ -23,17 +31,17 @@ Class Login extends CI_Controller
 
 			);
 				$this->session->set_flashdata($data);
-				redirect('dashboard');
+				redirect('login');
 			} //for if 
 
 			else
 			{
-				$username= $this->input->post('username');
+				$email= $this->input->post('email');
 				$password= $this->input->post('password');
-				$count=$this->Login_model->login($username,$password); //for counting if user exists
-				$result=$this->Login_model->getid($username,$password)->row();
+				$count=$this->Login_model->login($email,$password); //for counting if user exists
+				$result=$this->Login_model->getid($email,$password)->row();
 				$id=$result->InstituteID;
-				//$getname=$this->Login_model->getname($username,$password)->row();
+				//$getname=$this->Login_model->getname($email,$password)->row();
 				//$name=$getname->fname;
 			
 
@@ -42,7 +50,7 @@ Class Login extends CI_Controller
 				$this->session->set_userdata('uid',$id); //set user id
 				//$this->session->set_userdata('uname',$name);//for fname   
 				$this->session->set_flashdata('login_success','You are now logged in');
-       			 redirect(base_url('successtaraurlhala'));
+       			 redirect(base_url('profile'));
 
 
 
@@ -52,7 +60,7 @@ Class Login extends CI_Controller
 
 			else
 			{
-				$this->session->set_flashdata('login_fail', "<script> swal('Oohs','There was an error logining you in','error'); </script>");
+				$this->session->set_flashdata('login_fail', 'Oohs There was an error logining you in');
 				redirect('login');
 			}//else bhitra ko else ko bracket
 			}//for else

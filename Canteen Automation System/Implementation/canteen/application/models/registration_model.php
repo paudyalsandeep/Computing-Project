@@ -20,16 +20,22 @@ class Registration_model extends CI_Model
 		if ($query->num_rows() == 0) 
 		{
 		$this->db->insert('users',$data);
-		if ($this->db->affected_rows() > 0) //from here affected data can be known
-		{
-			return true;
-		}
+            if ($this->db->affected_rows() > 0) //from here affected data can be known
+            {
+                return true;
+            }
+        }
     }
     
-    /*public function register($user)
+    public function getRole()
     {
-        return $this->db->insert('users', $user);
-    }*/
-    
-}
+        $query=$this->db->get('role');
+        return $query->result();
+    }
+
+    public function get_college()
+    {
+        $query=$this->db->get('college');
+        return $query->result();
+    }
 }
