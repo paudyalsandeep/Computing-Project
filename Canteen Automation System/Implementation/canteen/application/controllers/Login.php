@@ -60,7 +60,7 @@ Class Login extends CI_Controller
 
 			else
 			{
-				$this->session->set_flashdata('login_fail', 'Oohs There was an error logining you in');
+				$this->session->set_flashdata('login_fail', 'Incorrect username or password');
 				redirect('login');
 			}//else bhitra ko else ko bracket
 			}//for else

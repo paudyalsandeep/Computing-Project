@@ -36,11 +36,11 @@ class Registration extends CI_Controller
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
-       /* $this->form_validation->set_rules('phone', 'Mobile Number ', 'required|regex_match[/^[0-9]{10}$/]'); 
-        $this->form_validation->set_rules('insID', 'Institute ID', 'required|min_length[8]|max_length[8]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]|max_length[30]');
-        $this->form_validation->set_rules('confPassword', 'Password Confirmation', 'required|matches[password]');
-        */
+       //$this->form_validation->set_rules('phone', 'Mobile Number ', 'required|regex_match[/^[0-9]{10}$/]'); 
+        //$this->form_validation->set_rules('insID', 'Institute ID', 'required|min_length[8]|max_length[8]');
+        //$this->form_validation->set_rules('password', 'Password', 'required|min_length[7]|max_length[30]');
+        //$this->form_validation->set_rules('confPassword', 'Confirm Password', 'required|matches[password]');
+
         if ($this->form_validation->run() == FALSE) 
         { 
             $data=array(

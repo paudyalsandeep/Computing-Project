@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+$route['items']='admin/get_item';
+$route['roles']='admin/get_role';
+$route['admin/college']='admin/get_college';
+$route['admin']='admin/get_users';
 $route['profile']='profile/index';
 $route['menu/payment']='payment/index';
 $route['menu']='canteen/index';
