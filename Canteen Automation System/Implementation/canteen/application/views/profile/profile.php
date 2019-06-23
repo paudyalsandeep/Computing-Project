@@ -1,5 +1,7 @@
 <?php
 
+
+
 if ($this->session->flashdata('login_success')) 
             {
                 echo '<div class="alert alert-success">';
@@ -8,4 +10,5 @@ if ($this->session->flashdata('login_success'))
                 echo '</div>';
             }
 
+             
 ?>

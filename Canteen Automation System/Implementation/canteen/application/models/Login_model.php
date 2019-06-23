@@ -25,7 +25,7 @@ public function login($username,$password)
 	public function getid($username,$password)
 	{
 
-  	 	 $this->db->select('email');
+  	 	 $this->db->select('userID');
     	$this->db->where('email',$username);
     		$this->db->where('password',$password);
    		 return $this->db->get('users');

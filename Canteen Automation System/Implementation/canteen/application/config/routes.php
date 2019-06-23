@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+
+$route['cart']='Cart/index';
+$route['logout']='Logout/index';
 $route['items']='admin/get_item';
 $route['roles']='admin/get_role';
 $route['admin/college']='admin/get_college';

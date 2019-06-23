@@ -66,6 +66,7 @@
 							<td hidden=""><?php echo $row->CollegeID; ?></td>
 							<td><?php echo $row->CollegeName; ?></td>
 							<td><?php echo $row->Address; ?></td>
+							
 						</tr>
 					<?php }
 

@@ -35,7 +35,10 @@
                 <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
             </li>
             <li>
-                <a class="nav-link" href=""><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                <a class="nav-link" href="<?php echo base_url(); ?>cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+            </li>
+            <li>
+                <a class="nav-link" href="<?php echo base_url('logout'); ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
             </li>
         </ul>
 

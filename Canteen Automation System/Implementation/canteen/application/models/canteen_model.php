@@ -8,6 +8,10 @@ class Canteen_model extends CI_Model
         return $query->result();
     }
 
+    public function insert_cart($data)
+    {
+        $this->db->insert("cart", $data);
+    }
 }
 
 ?>

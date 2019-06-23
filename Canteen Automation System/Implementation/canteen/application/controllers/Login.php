@@ -40,7 +40,9 @@ Class Login extends CI_Controller
 				$password= $this->input->post('password');
 				$count=$this->Login_model->login($email,$password); //for counting if user exists
 				$result=$this->Login_model->getid($email,$password)->row();
-				$id=$result->InstituteID;
+				print_r($result);
+				$id=$result->userID;
+
 				//$getname=$this->Login_model->getname($email,$password)->row();
 				//$name=$getname->fname;
 			
@@ -48,7 +50,9 @@ Class Login extends CI_Controller
 			if ($count==True) 
 			{
 				$this->session->set_userdata('uid',$id); //set user id
-				//$this->session->set_userdata('uname',$name);//for fname   
+				//$this->session->set_userdata('uname',$name);//for fname  
+				 echo "Session is".$this->session->userdata('uid');
+				 exit;
 				$this->session->set_flashdata('login_success','You are now logged in');
        			 redirect(base_url('profile'));
 
